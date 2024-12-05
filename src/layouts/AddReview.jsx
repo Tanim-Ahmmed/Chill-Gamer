@@ -27,6 +27,22 @@ const AddReview = () => {
     console.log(reviewData);
 
 
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(reviewData)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      if(data.insertedId){
+        
+      }
+    })
+
+
   }
 
   return (
@@ -34,7 +50,7 @@ const AddReview = () => {
       <div className="hero bg-base-200 min-h-screen ">
         <div className="card bg-orange-200 w-full shrink-0 rounded-none p-10 md:max-w-[800px] ">
           <div className="text-center">
-            <h1 className="text-2xl font-bold "> Add a Review</h1>
+            <h1 className="text-2xl font-bold "> Add New Review</h1>
           </div>
           <form onSubmit={handleAddReview} className="card-body">
             <div className="md:flex md:space-x-2 w-full">
@@ -112,7 +128,7 @@ const AddReview = () => {
                   <span className="label-text">Rating (1-5)</span>
                 </label>
                 <input
-                  type="number"
+                  type="text"
                   name="rating"
                   placeholder="Game Rating"
                   className="input input-bordered rounded-none w-full input-warning  border-2"
