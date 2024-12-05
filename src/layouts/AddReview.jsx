@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddReview = () => {
   const { user } = useContext(AuthContext);
@@ -38,7 +39,12 @@ const AddReview = () => {
     .then(data => {
       console.log(data);
       if(data.insertedId){
-        
+
+        Swal.fire({
+          title: "Congrats!",
+          text: "Your Game Review Added Successfully!",
+          icon: "success"
+        });
       }
     })
 
