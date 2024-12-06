@@ -1,18 +1,59 @@
 import { AuthContext } from "../providers/AuthProvider";
-import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import { MdDeleteForever } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
+import Swal from "sweetalert2";
+
+
 const MyReview = () => {
   const { user } = useContext(AuthContext);
-  const reviews = useLoaderData();
 
-  const myReviews =
-    reviews?.filter((review) => review.userEmail == user?.email) || [];
+  const loadedReviews = useLoaderData();
 
-  console.log(myReviews);
+  const [reviews , setReviews] = useState(loadedReviews);
+
+  const myReviews = reviews?.filter((review) => review.userEmail == user?.email) || [];
+
+
+
+  const handleDelete =(id)=>{
+    console.log(id);
+
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+
+          fetch(`http://localhost:5000/reviews/${id}`, {
+            method: 'DELETE'
+          })
+          .then(res => res.json())
+          .then(data =>{
+            console.log(data);
+            if(data.deletedCount > 0){
+                  
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your review has been deleted.",
+                    icon: "success"
+                  });
+                  const remaining = myReviews.filter((rev => rev._id !== id ));
+                  setReviews(remaining);
+            }
+          })
+        }
+      });
+  }
   return (
-    <div className="md:w-11/12 mx-auto min-h-screen flex justify-center my-8">
+    <div className="sm:w-11/12 mx-auto min-h-screen flex justify-center my-8">
       <div className="w-full sm:p-10 ">
         <h3 className="text-xl font-bold text-orange-400 text-center py-6">My Reviews</h3>
 
@@ -37,8 +78,13 @@ const MyReview = () => {
                   <td className="hidden sm:flex">{review.genre}</td>
                   <td>{review.publishingYear}</td>
                   <td>
+                    <Link to={`/updatereview/${review._id}`}>
                     <button className="text-lg text-orange-400 pr-6" ><FaRegEdit /></button>
-                    <button className="text-lg text-red-600"><MdDeleteForever /></button>
+                    </Link>
+                    <button 
+                    onClick={()=> handleDelete(review._id)}
+                    className="text-lg text-red-600">
+                    <MdDeleteForever /></button>
                   </td>
                   
                 </tr>

@@ -38,7 +38,7 @@ const AddReview = () => {
     .then(res => res.json())
     .then(data => {
       console.log(data);
-      if(data.insertedId){
+      if(data.insertedId >0){
 
         Swal.fire({
           title: "Congrats!",
@@ -53,7 +53,7 @@ const AddReview = () => {
 
   return (
     <div className="min-h-screen flex justify-center items-center sm:w-11/12 mx-auto">
-      <div className="hero bg-base-200 min-h-screen ">
+      <div className="hero bg-base-100 min-h-screen ">
         <div className="card bg-orange-200 w-full shrink-0 rounded-none p-10 md:max-w-[800px] ">
           <div className="text-center">
             <h1 className="text-2xl font-bold "> Add New Review</h1>
