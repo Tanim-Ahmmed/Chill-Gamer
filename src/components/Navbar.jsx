@@ -61,15 +61,24 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 ">{links}</ul>
       </div>
       <div className="navbar-end gap-4">
+        <div>
+          <Mode></Mode>
+        </div>
 
-
-        <div> <Mode></Mode>  </div>
 
         <div>
           {user && user?.email ? (
+             <div>
+              <div className="tooltip tooltip-bottom hover:cursor-pointer" data-tip={user?.displayName}>
             <div className="avatar online">
-              <div className="w-10 rounded-full">
+             
+
+
+              
+              <div className="w-10 rounded-full ">
                 <img src={user.photoURL} />
+              </div>
+              </div>
               </div>
             </div>
           ) : (
