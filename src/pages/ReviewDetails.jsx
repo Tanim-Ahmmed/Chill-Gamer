@@ -21,6 +21,8 @@ const ReviewDetails = () => {
     reviewDescription,
   } = review;
 
+  console.log(review);
+
   const handleWishList = () =>{
        
     const wishItem = {
@@ -33,8 +35,8 @@ const ReviewDetails = () => {
       genre : genre,
       reviewDescription : reviewDescription
     }
-    console.log(wishItem);
-
+   
+     
   
     fetch("https://chill-gamer-server-five.vercel.app/wishList", {
       method: "POST",

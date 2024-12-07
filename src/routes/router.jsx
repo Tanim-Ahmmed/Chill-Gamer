@@ -37,11 +37,11 @@ const router = createBrowserRouter([
                    </PrivateRoute>,
         },
         {
-            path:"/myreviews",
+            path:"/myreviews/:email",
             element:<PrivateRoute>
                        <MyReview></MyReview>
                    </PrivateRoute>,
-             loader: () => fetch("https://chill-gamer-server-five.vercel.app/reviews"),
+             loader: ({params}) => fetch(`https://chill-gamer-server-five.vercel.app/reviews/email/${params.email}`),
 
         },
         {
