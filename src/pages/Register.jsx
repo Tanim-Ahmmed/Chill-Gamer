@@ -4,14 +4,16 @@ import { BsFillEyeFill } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../providers/AuthProvider";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
 const Register = () => {
+   
     const [showPass , setShowPass] = useState(false);
     const [err, setErr] = useState("");
-    const {createUser, setUser, updateUsersProfile} = useContext(AuthContext);
+    const {createUser, setUser, updateUsersProfile ,  handleGoogleLogin } = useContext(AuthContext);
      
     const navigate = useNavigate();
 
@@ -48,7 +50,18 @@ const Register = () => {
 
 
     const handleLoginWithGoogle = () =>{
-        
+      handleGoogleLogin()
+      .then((res) =>{
+        const user = res.user;
+        setUser(user);
+        navigate("/")
+
+        toast.success("Welcome ! Login with Google successfull ", {
+          position: "top-center",
+          autoClose: 3000,
+        });
+
+      })
     }
     return (
         <div className="min-h-screen flex justify-center items-center">
@@ -158,7 +171,7 @@ const Register = () => {
               Login
             </Link>
           </p>
-          <div  onClick={handleLoginWithGoogle} className="flex justify-center items-center gap-4 border rounded-none py-3 font-bold w-10/12 mx-auto hover:text-white hover:bg-neutral hover:cursor-pointer">
+          <div  onClick={handleLoginWithGoogle} className="flex justify-center items-center gap-4 border rounded-none py-3 font-bold w-full sm:w-10/12 mx-auto hover:text-white hover:bg-neutral hover:cursor-pointer">
              <FcGoogle />
                <button > Sign in with Google</button>
             </div>
