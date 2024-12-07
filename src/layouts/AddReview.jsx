@@ -38,7 +38,7 @@ const AddReview = () => {
     .then(res => res.json())
     .then(data => {
       console.log(data);
-      if(data.insertedId >0){
+      if(data.insertedId){
 
         Swal.fire({
           title: "Congrats!",
