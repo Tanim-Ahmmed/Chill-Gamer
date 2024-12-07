@@ -61,10 +61,11 @@ const router = createBrowserRouter([
 
     },
         {
-            path:"/gamewatchlist",
+            path:"/gamewatchlist/:email",
             element:<PrivateRoute>
                        <WatchList></WatchList>
                    </PrivateRoute>,
+            loader: ({params}) =>  fetch(`https://chill-gamer-server-five.vercel.app/wishList/${params.email}`),
         },
         {
             path:"/auth",
