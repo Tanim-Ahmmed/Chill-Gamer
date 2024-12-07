@@ -75,7 +75,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/auth/login"
-              className="py-2 px-4 link-hover bg-orange-700 text-white font-bold hover:border-2 rounded-md"
+              className="py-2 px-4 link-hover bg-orange-600 text-white font-bold hover:border-2 rounded-md"
             >
               Login
             </Link>
@@ -87,14 +87,14 @@ const Navbar = () => {
             <Link
               to="/"
               onClick={logOut}
-              className=" py-2 px-4 link-hover bg-orange-700 text-white font-bold hover:border-2 rounded-md"
+              className=" py-2 px-4 link-hover bg-orange-600 text-white font-bold hover:border-2 rounded-md"
             >
               LogOut
             </Link>
           ) : (
             <Link
               to="/auth/register"
-              className=" py-2 px-4 link-hover bg-orange-700 text-white font-bold hover:border-2 rounded-md"
+              className=" py-2 px-4 link-hover bg-orange-600 text-white font-bold hover:border-2 rounded-md"
             >
               Register
             </Link>

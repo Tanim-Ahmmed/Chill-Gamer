@@ -11,6 +11,7 @@ import Register from "../pages/Register";
 import Auth from "../layouts/Auth";
 import PrivateRoute from "./PrivateRoute";
 import UpdateReview from "../pages/UpdateReview";
+import ReviewDetails from "../pages/ReviewDetails";
 
 
 const router = createBrowserRouter([
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
         {
           path:"/allreviews",
           element:<AllReviews></AllReviews>,
-          loader: () => fetch("http://localhost:5000/reviews"),
+          loader: () => fetch("https://chill-gamer-server-five.vercel.app/reviews"),
         },
         {
             path:"/addreview",
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
             element:<PrivateRoute>
                        <MyReview></MyReview>
                    </PrivateRoute>,
-             loader: () => fetch("http://localhost:5000/reviews"),
+             loader: () => fetch("https://chill-gamer-server-five.vercel.app/reviews"),
 
         },
         {
@@ -48,9 +49,17 @@ const router = createBrowserRouter([
           element:<PrivateRoute>
                      <UpdateReview></UpdateReview>
                  </PrivateRoute>,
-           loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`),
+           loader: ({params}) => fetch(`https://chill-gamer-server-five.vercel.app/reviews/${params.id}`),
 
       },
+      {
+        path:"/reviewDetails/:id",
+        element:<PrivateRoute>
+                   <ReviewDetails></ReviewDetails>
+               </PrivateRoute>,
+         loader: ({params}) => fetch(`https://chill-gamer-server-five.vercel.app/reviews/${params.id}`),
+
+    },
         {
             path:"/gamewatchlist",
             element:<PrivateRoute>

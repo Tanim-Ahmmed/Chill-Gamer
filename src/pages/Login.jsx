@@ -41,7 +41,7 @@ const Login = () => {
           <div className="text-center">
             <h1 className="text-2xl font-bold ">Login your account</h1>
           </div>
-          <form onSubmit={handleLogin} className="card-body">
+          <form onSubmit={handleLogin} className="sm:card-body">
             <div className="form-control ">
               <label className="label ">
                 <span className="label-text">Email</span>

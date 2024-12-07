@@ -1,6 +1,17 @@
+import { Link } from "react-router-dom";
 
 const ReviewCard = ({ review }) => {
-    const {userName, userEmail, coverImage, title, publishingYear, rating, genre, reviewDescription} = review;
+  const {
+    _id,
+    userName,
+    userEmail,
+    coverImage,
+    title,
+    publishingYear,
+    rating,
+    genre,
+    reviewDescription,
+  } = review;
   return (
     <div>
       <div className="card bg-base-100 shadow-xl">
@@ -17,10 +28,16 @@ const ReviewCard = ({ review }) => {
             <div className="badge badge-warning">{rating}</div>
           </h2>
           <p>{reviewDescription}</p>
-          {/* <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
-          </div> */}
+         
+
+          <div className="mt-6 text-center">
+            <Link
+              to={`/reviewDetails/${_id}`}
+              className="inline-block bg-orange-600 text-white px-6 py-2 rounded-full text-lg font-semibold shadow hover:bg-orange-400 transition"
+            >
+             Explore Details
+            </Link>
+          </div>
         </div>
       </div>
     </div>

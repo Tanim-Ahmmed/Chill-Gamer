@@ -1,10 +1,20 @@
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+
 const Mode = () => {
+  const {dark, setDark} = useContext(AuthContext)
+  const handleChangeMode = () =>{
+    const newMode = !dark;
+    setDark(newMode)
+  }
+  console.log(dark)
   return (
     <div>
       <label className="grid cursor-pointer place-items-center">
         <input
           type="checkbox"
           value="synthwave"
+          onChange={ handleChangeMode}
           className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
         />
         <svg

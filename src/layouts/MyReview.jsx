@@ -32,7 +32,7 @@ const MyReview = () => {
         if (result.isConfirmed) {
 
 
-          fetch(`http://localhost:5000/reviews/${id}`, {
+          fetch(`https://chill-gamer-server-five.vercel.app/reviews/${id}`, {
             method: 'DELETE'
           })
           .then(res => res.json())

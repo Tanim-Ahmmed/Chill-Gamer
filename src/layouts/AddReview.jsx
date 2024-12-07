@@ -28,7 +28,7 @@ const AddReview = () => {
     console.log(reviewData);
 
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://chill-gamer-server-five.vercel.app/reviews", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
