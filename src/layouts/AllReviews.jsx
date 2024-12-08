@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import ReviewCard from "../components/ReviewCard";
 import { useState } from "react";
+import { HiSortDescending } from "react-icons/hi";
 
 const AllReviews = () => {
   const initialReviews = useLoaderData();
@@ -47,8 +48,8 @@ const AllReviews = () => {
             <option value="RPG">RPG</option> 
           </select>
           
-         <button onClick={()=>handleSort("R")}>R</button>
-         <button onClick={() =>handleSort("Y")}>Y</button>
+         <button onClick={()=>handleSort("R")} className="flex items-center justify-center gap-2 bg-base-100 border border-orange-500 px-2 rounded-xl hover:bg-orange-400 hover:text-white">Rating <HiSortDescending /> </button>
+         <button onClick={() =>handleSort("Y")} className="flex items-center justify-center gap-2 bg-base-100 border border-orange-500 px-2 rounded-xl hover:bg-orange-400 hover:text-white">Year<HiSortDescending /></button>
         </div>
       </div>
       

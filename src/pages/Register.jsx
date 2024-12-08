@@ -27,6 +27,33 @@ const Register = () => {
         const password = form.password.value;
         const confirm = form.confirm.value;
 
+      
+        if(password.length < 6){
+          setErr("Passward must contain atleast 6 character.")
+          return;
+        }
+      
+        if(!/[a-z]/.test(password)){
+          setErr("Passward must contain atleast one lowercase latter. ")
+            return;
+
+        }
+
+        if(!/[A-Z]/.test(password)){
+
+          setErr("Passward must contain atleast one uppercase latter. ");
+          return;
+
+      }
+      
+      
+        if(password !== confirm){
+          setErr("Passward didn't match")
+          return;
+        }
+
+       
+
         createUser(email, password)
         .then(res =>{
             const user = res.user;
@@ -35,6 +62,11 @@ const Register = () => {
             updateUsersProfile({displayName:name, photoURL:photo })
             .then(res =>{
               navigate("/")
+              toast.success("Welcome ! Your successfull ", {
+                position: "top-center",
+                autoClose: 3000,
+              });
+      
             })
             .catch(error =>{
               setErr(error)

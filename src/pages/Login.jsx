@@ -27,7 +27,10 @@ const Login = () => {
             navigate(location?.state ? location.state : "/")
         })
         .catch(error => {
-           setErr(error.code)
+          toast.error(` login failed! please try again. `, {
+            position: "top-center",
+            autoClose: 3000,
+          });
         })
 
     }
