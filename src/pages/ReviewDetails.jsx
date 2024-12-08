@@ -123,7 +123,7 @@ const ReviewDetails = () => {
         
             <p className="mb-5 hero-overlay bg-opacity-60 p-8 rounded-2xl font-semibold">
               {reviewDescription}
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam quibusdam cupiditate nobis ducimus provident assumenda nostrum quod accusantium officia sunt iusto perferendis dolores, at dolorem eligendi necessitatibus inventore alias facilis cumque! Delectus amet harum sunt itaque quis culpa explicabo, neque illum tenetur odio adipisci minima nihil porro voluptatum debitis rem?
+               dolor sit amet, consectetur adipisicing elit. Aliquam quibusdam cupiditate nobis ducimus provident assumenda nostrum quod accusantium officia sunt iusto perferendis dolores, at dolorem eligendi necessitatibus inventore alias facilis cumque! Delectus amet harum sunt itaque quis culpa explicabo, neque illum tenetur odio adipisci minima nihil porro voluptatum debitis rem?
             </p>
 
 

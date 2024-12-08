@@ -15,10 +15,16 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [dark, setDark] = useState(false);
+  const [theme, setTheme] = useState('light');
 
   const googleProvider = new GoogleAuthProvider();
 
+
+
+  useEffect(() =>{
+    document.documentElement.setAttribute('data-theme', theme);
+  },[theme])
+  
 
    const handleGoogleLogin = () => {
         setLoading(true);
@@ -48,8 +54,8 @@ const AuthProvider = ({ children }) => {
   const AuthInfo = {
     user,
     loading,
-    dark,
-    setDark,
+    theme,
+    setTheme,
     setUser,
     createUser,
     userLogin,

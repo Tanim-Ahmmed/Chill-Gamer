@@ -27,7 +27,7 @@ const ReviewCard = ({ review }) => {
             {title}
             <div className="badge badge-warning">{rating}</div>
           </h2>
-          <p>{reviewDescription}</p>
+          <p>{reviewDescription.split(" ").slice(0,8).join(" ")}</p>
          
 
           <div className="mt-6 text-center">

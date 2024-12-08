@@ -2,12 +2,12 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Mode = () => {
-  const {dark, setDark} = useContext(AuthContext)
+  const {theme, setTheme} = useContext(AuthContext)
   const handleChangeMode = () =>{
-    const newMode = !dark;
-    setDark(newMode)
+   const newTheme =  theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
   }
-  console.log(dark)
+  console.log(theme);
   return (
     <div>
       <label className="grid cursor-pointer place-items-center">
