@@ -39,7 +39,7 @@ const AllReviews = () => {
         <select
             id="genre-filter"
             onChange={(e) => handleGenres(e)}
-            className="mt-1 block w-48 p-2 border border-gray-300 rounded-md shadow-sm bg-white focus:outline-none focus:ring-orange-400 hover:ring-orange-400 hover:border-orange-400 focus:border-orange-500 sm:text-sm"
+            className="mt-1 block w-48 p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 hover:ring-orange-400 hover:border-orange-400 focus:border-orange-500 sm:text-sm"
           >
             <option value="">All Genres</option>
             <option value="Action">Action</option>
@@ -52,7 +52,7 @@ const AllReviews = () => {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 m-6 sm:m-0  md:grid-cols-2 lg:grid-cols-3 gap-4">
         {reviews.map((review) => (
           <ReviewCard
            key={review._id}

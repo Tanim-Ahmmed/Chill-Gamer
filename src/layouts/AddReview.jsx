@@ -3,7 +3,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const AddReview = () => {
-  const { user } = useContext(AuthContext);
+  const { user, theme } = useContext(AuthContext);
 
   const { displayName, email } = user;
 
@@ -54,7 +54,7 @@ const AddReview = () => {
   return (
     <div className="min-h-screen flex justify-center items-center sm:w-11/12 mx-auto">
       <div className="hero bg-base-100 min-h-screen ">
-        <div className="card bg-orange-200 w-full shrink-0 rounded-none p-10 md:max-w-[800px] ">
+        <div className={`card w-full shrink-0 rounded-none p-10 md:max-w-[800px] ${theme === 'dark' ? 'bg-gray-700' : 'bg-orange-200'}`}>
           <div className="text-center">
             <h1 className="text-2xl font-bold "> Add New Review</h1>
           </div>

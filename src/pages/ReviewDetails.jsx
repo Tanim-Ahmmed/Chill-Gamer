@@ -123,11 +123,10 @@ const ReviewDetails = () => {
         
             <p className="mb-5 hero-overlay bg-opacity-60 p-8 rounded-2xl font-semibold">
               {reviewDescription}
-               dolor sit amet, consectetur adipisicing elit. Aliquam quibusdam cupiditate nobis ducimus provident assumenda nostrum quod accusantium officia sunt iusto perferendis dolores, at dolorem eligendi necessitatibus inventore alias facilis cumque! Delectus amet harum sunt itaque quis culpa explicabo, neque illum tenetur odio adipisci minima nihil porro voluptatum debitis rem?
             </p>
 
 
-            <button onClick={ handleWishList} className="py-2 bg-orange-400 mx-auto hover:bg-white hover:text-orange-500 rounded-3xl flex gap-3 items-center text-white font-bold px-4 justify-center"> Add to WatchList   <div className="text-lg border p-2 rounded-full hover:bg-white hover:text-orange-600"><AiFillLike /></div> </button>
+            <button onClick={ handleWishList} className="py-2 my-8 bg-orange-400 mx-auto hover:bg-white hover:text-orange-500 rounded-3xl flex gap-3 items-center text-white font-bold px-4 justify-center"> Add to WatchList   <div className="text-lg border p-2 rounded-full hover:bg-white hover:text-orange-600"><AiFillLike /></div> </button>
            
            
           </div>

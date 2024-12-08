@@ -1,8 +1,12 @@
 
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../providers/AuthProvider";
 
 const UpdateReview = () => {
+
+   const {theme} = useContext(AuthContext);
     const review = useLoaderData();
 
     const {_id, userName, userEmail, coverImage, title, publishingYear, rating, genre, reviewDescription} = review;
@@ -52,7 +56,7 @@ const UpdateReview = () => {
     return (
         <div className="min-h-screen flex justify-center items-center sm:w-11/12 mx-auto">
         <div className="hero bg-base-100 min-h-screen ">
-          <div className="card bg-orange-200 w-full shrink-0 rounded-none p-10 md:max-w-[800px] ">
+          <div className={`card w-full shrink-0 rounded-none p-10 md:max-w-[800px] ${theme === 'dark' ? 'bg-gray-700' : 'bg-orange-200'}`}>
             <div className="text-center">
               <h1 className="text-2xl font-bold ">Update Your Review</h1>
             </div>

@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 
 const ReviewCard = ({ review }) => {
@@ -15,6 +16,7 @@ const ReviewCard = ({ review }) => {
   return (
     <div>
       <div className="card bg-base-100 shadow-xl">
+        <Fade>
         <figure>
           <img
             src={coverImage}
@@ -27,7 +29,7 @@ const ReviewCard = ({ review }) => {
             {title}
             <div className="badge badge-warning">{rating}</div>
           </h2>
-          <p>{reviewDescription.split(" ").slice(0,8).join(" ")}</p>
+          <p>{reviewDescription.split(" ").slice(0,10).join(" ")}</p>
          
 
           <div className="mt-6 text-center">
@@ -39,6 +41,7 @@ const ReviewCard = ({ review }) => {
             </Link>
           </div>
         </div>
+        </Fade>
       </div>
     </div>
   );

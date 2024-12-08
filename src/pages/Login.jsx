@@ -52,8 +52,8 @@ const Login = () => {
     }
   return (
     <div className="min-h-screen flex justify-center items-center">
-      <div className="hero bg-base-200 min-h-screen">
-        <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
+      <div className="hero min-h-screen">
+        <div className="card bg-base-200 w-full max-w-lg shrink-0 rounded-none p-10">
           <div className="text-center">
             <h1 className="text-2xl font-bold ">Login your account</h1>
           </div>

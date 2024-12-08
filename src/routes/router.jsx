@@ -23,6 +23,7 @@ const router = createBrowserRouter([
         {
             path:"/",
             element:<Home></Home>,
+            loader:() => fetch("https://chill-gamer-server-five.vercel.app/reviews/latest"),
         },
 
         {

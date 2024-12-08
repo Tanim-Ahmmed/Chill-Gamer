@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 
 const Root = () => {
     return (
-        <div className='max-w-[1400px] mx-auto border-2'>
+        <div className='max-w-[1400px] mx-auto'>
            <Navbar></Navbar>
 
            <div className='min-h-screen'>

@@ -7,7 +7,6 @@ const Mode = () => {
    const newTheme =  theme === 'light' ? 'dark' : 'light'
     setTheme(newTheme)
   }
-  console.log(theme);
   return (
     <div>
       <label className="grid cursor-pointer place-items-center">

@@ -21,7 +21,7 @@ const Navbar = () => {
         <NavLink to={`/myreviews/${user?.email}`}>My Reviews</NavLink>
       </li>
       <li>
-        <NavLink to={`/gamewatchlist/${user?.email}`}>Game WatchList</NavLink>
+        <NavLink to={`/gamewatchlist/${user?.email}`}>WatchList</NavLink>
       </li>
     </>
   );
