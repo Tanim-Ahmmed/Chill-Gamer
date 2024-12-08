@@ -7,7 +7,7 @@ const AllReviews = () => {
 
   const [reviews, setReviews] = useState(initialReviews);
 
-  const handleSort =(sort) =>{
+  const handleSort =(sort) =>{ 
     
     fetch(`https://chill-gamer-server-five.vercel.app/reviews?sort=${sort}`)
     .then(res => res.json())
@@ -16,11 +16,36 @@ const AllReviews = () => {
     })
 
   }
+
+  const handleGenres = (e) =>{
+    const genre = e.target.value;
+       console.log(genre)
+
+      
+    fetch(`https://chill-gamer-server-five.vercel.app/reviews?genre=${genre}`)
+    .then(res => res.json())
+    .then(data => {
+      setReviews(data);
+    })
+  }
   return (
     <div className="sm:w-11/12 mx-auto my-8">
       <div className="flex justify-between p-6 my-6 shadow-md rounded-md">
-        <h2 className="text-lg font-semibold">Sort by </h2>
-        <div className="flex gap-4">
+        <h2 className="text-lg font-semibold hidden sm:flex">Sort by </h2>
+        <div className="flex gap-4 ">
+
+
+           
+        <select
+            id="genre-filter"
+            onChange={(e) => handleGenres(e)}
+            className="mt-1 block w-48 p-2 border border-gray-300 rounded-md shadow-sm bg-white focus:outline-none focus:ring-orange-400 hover:ring-orange-400 hover:border-orange-400 focus:border-orange-500 sm:text-sm"
+          >
+            <option value="">All Genres</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="RPG">RPG</option> 
+          </select>
           
          <button onClick={()=>handleSort("R")}>R</button>
          <button onClick={() =>handleSort("Y")}>Y</button>
@@ -40,3 +65,15 @@ const AllReviews = () => {
 };
 
 export default AllReviews;
+
+
+
+
+
+
+
+
+
+
+
+
