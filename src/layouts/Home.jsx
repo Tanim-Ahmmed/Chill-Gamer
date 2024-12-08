@@ -6,9 +6,14 @@ import img3 from "../assets/bnn3.webp";
 import img4 from "../assets/bnn4.jpg";
 
 import { Fade } from "react-awesome-reveal";
+import Mark from "../components/Mark";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import FeedBack from "../components/FeedBack";
 
 const Home = () => {
   const reviews = useLoaderData();
+  const {user} = useContext(AuthContext);
   return (
     <div className="sm:w-11/12 mx-auto min-h-screen ">
       {/* bannder slider  */}
@@ -61,11 +66,26 @@ const Home = () => {
       </div>
       </Fade>
 
+        
+        <div>
+          {
+            user?.email &&   <Mark></Mark>
+          }
+         
+        </div>
      
         <div className="grid grid-cols-1  m-6 sm:m-0 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {reviews.map((review) => (
             <ReviewCard key={review._id} review={review}></ReviewCard>
           ))}
+        </div>
+
+
+        <div>
+          {
+            user?.email &&   <FeedBack></FeedBack>
+          }
+         
         </div>
       
     </div>
