@@ -20,7 +20,7 @@ const AllReviews = () => {
 
   const handleGenres = (e) =>{
     const genre = e.target.value;
-       console.log(genre)
+     
 
       
     fetch(`https://chill-gamer-server-five.vercel.app/reviews?genre=${genre}`)
@@ -31,7 +31,7 @@ const AllReviews = () => {
   }
   return (
     <div className="sm:w-11/12 mx-auto my-8">
-      <div className="flex justify-between p-6 my-6 shadow-md rounded-md">
+      <div className="flex justify-between items-center p-6 my-6 shadow-md rounded-md">
         <h2 className="text-lg font-semibold hidden sm:flex">Sort by </h2>
         <div className="flex gap-4 ">
 

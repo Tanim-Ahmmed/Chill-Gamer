@@ -8,7 +8,7 @@ const ReviewDetails = () => {
   const review = useLoaderData();
   const {user} = useContext(AuthContext);
   const { displayName, email } = user;
-  console.log(displayName, email)
+ 
 
   const {
     userName,
@@ -21,7 +21,7 @@ const ReviewDetails = () => {
     reviewDescription,
   } = review;
 
-  console.log(review);
+ 
 
   const handleWishList = () =>{
        
@@ -47,7 +47,7 @@ const ReviewDetails = () => {
     })
     .then( res => res.json())
     .then(data => {
-      console.log(data)
+    
       if(data.insertedId){
 
         Swal.fire({

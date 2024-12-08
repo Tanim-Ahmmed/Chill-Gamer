@@ -28,7 +28,7 @@ const UpdateReview = () => {
 
         const updatedReview = {userName, userEmail, coverImage, title, publishingYear, rating, genre, reviewDescription}
 
-       console.log(updatedReview);
+      
 
 
         fetch(`https://chill-gamer-server-five.vercel.app/reviews/${_id}`, {
@@ -40,7 +40,7 @@ const UpdateReview = () => {
           })
           .then(res => res.json())
           .then(data => {
-            console.log(data);
+          
             if(data.modifiedCount > 0){
       
               Swal.fire({

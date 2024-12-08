@@ -25,7 +25,7 @@ const AddReview = () => {
 
     const reviewData = {userName, userEmail, coverImage, title, publishingYear, rating, genre, reviewDescription}
 
-    console.log(reviewData);
+    
 
 
     fetch("https://chill-gamer-server-five.vercel.app/reviews", {
@@ -37,7 +37,7 @@ const AddReview = () => {
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data);
+     
       if(data.insertedId){
 
         Swal.fire({

@@ -18,7 +18,6 @@ const MyReview = () => {
 
 
   const handleDelete =(id)=>{
-    console.log(id);
 
     Swal.fire({
         title: "Are you sure?",
@@ -37,7 +36,7 @@ const MyReview = () => {
           })
           .then(res => res.json())
           .then(data =>{
-            console.log(data);
+           
             if(data.deletedCount > 0){
                   
                 Swal.fire({
