@@ -36,7 +36,7 @@ const ReviewDetails = () => {
       reviewDescription : reviewDescription
     }
    
-     
+
   
     fetch("https://chill-gamer-server-five.vercel.app/wishList", {
       method: "POST",

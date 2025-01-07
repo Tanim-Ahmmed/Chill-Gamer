@@ -43,7 +43,6 @@ const Register = () => {
 
           setErr("Passward must contain atleast one uppercase latter. ");
           return;
-
       }
       
       

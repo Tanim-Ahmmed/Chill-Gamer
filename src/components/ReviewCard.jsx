@@ -4,13 +4,9 @@ import { Link } from "react-router-dom";
 const ReviewCard = ({ review }) => {
   const {
     _id,
-    userName,
-    userEmail,
     coverImage,
     title,
-    publishingYear,
     rating,
-    genre,
     reviewDescription,
   } = review;
   return (

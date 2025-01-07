@@ -14,15 +14,24 @@ const Navbar = () => {
       <li>
         <NavLink to="/allreviews">All Reviews</NavLink>
       </li>
-      <li>
+      {
+        user?.email && 
+        <li>
         <NavLink to="/addreview">Add Review</NavLink>
       </li>
-      <li>
+       }
+      {
+        user?.email && 
+        <li>
         <NavLink to={`/myreviews/${user?.email}`}>My Reviews</NavLink>
       </li>
+      }
+      { user?.email &&
       <li>
         <NavLink to={`/gamewatchlist/${user?.email}`}>WatchList</NavLink>
       </li>
+      }
+     
     </>
   );
 
