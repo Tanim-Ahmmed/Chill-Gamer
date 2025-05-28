@@ -1,5 +1,4 @@
 
-
 # Chill Gamer : A Game Review Platform
 
 Welcome to **Chill Gamer**, a platform designed for game enthusiasts to share, explore, and review their favorite games. This application focuses on creating an engaging user experience with dynamic features and user-friendly designs.
